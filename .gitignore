@@ -1,0 +1,5 @@
+backend/.idea/
+backend/lib/
+backend/logs/
+frontend/.idea/
+frontend/node_modules/
