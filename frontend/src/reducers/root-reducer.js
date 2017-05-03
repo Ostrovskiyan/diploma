@@ -1,12 +1,8 @@
 import {combineReducers} from "redux";
-import profile from "./profile";
-import menu from "./menu";
-import issues from "./issues";
+import factorize from "./factorize";
 
 const rootReducer = combineReducers({
-    profile,
-    menu,
-    issues
+    factorize
 });
 
 export default rootReducer;
