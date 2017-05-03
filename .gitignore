@@ -3,3 +3,7 @@ backend/lib/
 backend/logs/
 frontend/.idea/
 frontend/node_modules/
+backend/target/
+backend/project/target/resolution-cache/default/backend-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.properties
+backend/project/target/
+backend/project/project/target/
