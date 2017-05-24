@@ -3,7 +3,7 @@ package controllers;
 import com.fasterxml.jackson.databind.JsonNode;
 import play.libs.Json;
 import play.mvc.Result;
-import services.CalculateResult;
+import dto.CalculateResult;
 
 import static play.mvc.Http.Context.Implicit.request;
 import static play.mvc.Results.*;

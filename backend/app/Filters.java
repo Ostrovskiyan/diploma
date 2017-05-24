@@ -1,5 +1,4 @@
 import play.filters.cors.CORSFilter;
-import play.filters.hosts.AllowedHostsFilter;
 import play.http.DefaultHttpFilters;
 
 import javax.inject.Inject;
