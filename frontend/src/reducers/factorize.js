@@ -10,7 +10,8 @@ const factorize = (state = {loading: false}, action) => {
         case FACTORIZED:
             return {
                 loading: false,
-                factorizedNumber: action.number
+                number1: action.number1,
+                number2: action.number2,
             };
         case FACTORIZED_ERROR:
             return {

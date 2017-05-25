@@ -6,8 +6,9 @@ import algorithm.Result;
 import java.math.BigInteger;
 
 import static algorithm.ResultStatus.*;
+import static util.BigIntegerOperations.log;
 import static util.BigIntegerOperations.pow;
-import static util.Logger.log;
+import static util.Logger.console;
 
 public class ClassicAlgorithm implements Algorithm {
 
@@ -20,7 +21,7 @@ public class ClassicAlgorithm implements Algorithm {
     @Override
     public Result factorize(String number) {
         final BigInteger factorizedNumber = new BigInteger(number);
-        log("Factorize " + factorizedNumber, "Factorized number bit size " + factorizedNumber.bitLength());
+        console("Factorize " + factorizedNumber, "Factorized number bit size " + factorizedNumber.bitLength());
         int i = 0;
         long startTime = System.currentTimeMillis();
         Result result;
@@ -32,7 +33,7 @@ public class ClassicAlgorithm implements Algorithm {
         }
         long endTime = System.currentTimeMillis();
         long time = endTime - startTime;
-        log("Millis : " + time, "Second : " + time / 1000., "Minutes : " + time / 60_000.);
+        console("Millis : " + time, "Second : " + time / 1000., "Minutes : " + time / 60_000.);
         return result;
     }
 
@@ -49,14 +50,10 @@ public class ClassicAlgorithm implements Algorithm {
             return result;
         }
 
-        BigInteger exponent = BigInteger.valueOf(2);
-        BigInteger skipIfLower;
-        do {
-            skipIfLower = pow(basisBI, exponent);
-            exponent = exponent.add(ONE);
-        } while(skipIfLower.compareTo(factorizedNumber) <= 0);
-
-        for (; exponent.compareTo(factorizedNumber) < 0; exponent = exponent.add(ONE)) {
+        for (BigInteger exponent = BigInteger.valueOf(log(factorizedNumber, basisBI)); exponent.compareTo
+                (factorizedNumber)
+                < 0; exponent =
+                exponent.add(ONE)) {
             BigInteger moduleOfPoweredBasis = basisBI.modPow(exponent, factorizedNumber);
             if (!moduleOfPoweredBasis.equals(ONE)) {
                 continue;

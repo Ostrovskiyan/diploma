@@ -10,10 +10,11 @@ const request = () => {
     }
 };
 
-const factorized = (resultNumber) => {
+const factorized = (number1, number2) => {
     return {
         type: FACTORIZED,
-        number: resultNumber
+        number1,
+        number2,
     }
 };
 
@@ -35,7 +36,8 @@ export function factorize(number) {
         .then(function (response) {
             console.log("success");
             console.log(response);
-            dispatch(factorized(response.data.number));
+            let data = response.data;
+            dispatch(factorized(data.firstFactor, data.secondFactor));
         })
         .catch(function (error) {
             console.log("error");

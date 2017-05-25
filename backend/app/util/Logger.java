@@ -2,13 +2,13 @@ package util;
 
 public class Logger {
 
-    public static void log(String text) {
+    public static void console(String text) {
         System.out.println(text);
     }
 
-    public static void log(String ...texts) {
+    public static void console(String ...texts) {
         for (String msg : texts) {
-            log(msg);
+            console(msg);
         }
     }
 

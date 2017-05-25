@@ -44,4 +44,10 @@ public class BigIntegerOperations {
         }
     }
 
+    public static int log(BigInteger number, BigInteger basis) {
+        int number2Log = number.bitLength() - 1;
+        int basis2Log = basis.bitLength() - 1;
+        return number2Log / basis2Log;
+    }
+
 }
