@@ -12,12 +12,13 @@ public class CalculateService {
     }
 
     public static void main(String[] args) {
-        final long sourceFactor1 = 65539;
-        final long sourceFactor2 = 65617;
-        Algorithm algorithm = new ClassicAlgorithm();
-        Result result = algorithm.factorize(Long.toString(sourceFactor1 * sourceFactor2));
-        System.out.println(result.getFirstFactor());
-        System.out.println(result.getSecondFactor());
+//        final long sourceFactor1 = 65539;
+//        final long sourceFactor2 = 65617;
+//        Algorithm algorithm = new ClassicAlgorithm();
+//        Result result = algorithm.factorize(Long.toString(sourceFactor1 * sourceFactor2));
+//        System.out.println(result.getFirstFactor());
+//        System.out.println(result.getSecondFactor());
+        System.out.println(Runtime.getRuntime().availableProcessors());
 
     }
 
