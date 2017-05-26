@@ -12,6 +12,8 @@ public class Result {
 
     private ResultStatus resultStatus;
 
+    private int parallelNumber;
+
     public String getFirstFactor() {
         return firstFactor;
     }
@@ -50,5 +52,13 @@ public class Result {
 
     public void setResultStatus(ResultStatus resultStatus) {
         this.resultStatus = resultStatus;
+    }
+
+    public int getParallelNumber() {
+        return parallelNumber;
+    }
+
+    public void setParallelNumber(int parallelNumber) {
+        this.parallelNumber = parallelNumber;
     }
 }

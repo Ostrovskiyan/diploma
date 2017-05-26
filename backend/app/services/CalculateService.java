@@ -3,6 +3,7 @@ package services;
 import algorithm.Algorithm;
 import algorithm.Result;
 import algorithm.implementation.ClassicAlgorithm;
+import algorithm.implementation.ClassicParallelAlgorithm;
 
 public class CalculateService {
 
@@ -12,13 +13,16 @@ public class CalculateService {
     }
 
     public static void main(String[] args) {
-//        final long sourceFactor1 = 65539;
-//        final long sourceFactor2 = 65617;
+        final long sourceFactor1 = 7247;
+        final long sourceFactor2 = 3719;
+        Algorithm algorithm = new ClassicParallelAlgorithm();
 //        Algorithm algorithm = new ClassicAlgorithm();
-//        Result result = algorithm.factorize(Long.toString(sourceFactor1 * sourceFactor2));
-//        System.out.println(result.getFirstFactor());
-//        System.out.println(result.getSecondFactor());
-        System.out.println(Runtime.getRuntime().availableProcessors());
+        Result result = algorithm.factorize(Long.toString(sourceFactor1 * sourceFactor2));
+        System.out.println(result.getFirstFactor());
+        System.out.println(result.getSecondFactor());
+        System.out.println(result.getPeriod());
+        System.out.println(result.getBasis());
+//        System.out.println(Runtime.getRuntime().availableProcessors());
 
     }
 
