@@ -8,8 +8,10 @@ import java.util.*;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ForkJoinPool;
 
 import static algorithm.ResultStatus.*;
+import static tyrex.util.Configuration.console;
 import static util.BigIntegerOperations.log;
 import static util.BigIntegerOperations.pow;
 import static util.Logger.console;
@@ -53,7 +55,7 @@ public class ClassicParallelAlgorithm implements Algorithm {
             result.setResultStatus(SUCCESS);
             return result;
         }
-        int coresCount = Runtime.getRuntime().availableProcessors();
+        int coresCount = ForkJoinPool.getCommonPoolParallelism();
 
         BigInteger skipSteps = BigInteger.valueOf(log(factorizedNumber, basisBI));
         BigInteger step = BigInteger.valueOf(coresCount);
@@ -77,7 +79,6 @@ public class ClassicParallelAlgorithm implements Algorithm {
                 futureMap.remove(result.getParallelNumber());
                 return recursiveCall(futureMap);
             }
-            console(result.getPeriod());
             return result;
         } catch (InterruptedException|ExecutionException e) {
             Result result = new Result();
