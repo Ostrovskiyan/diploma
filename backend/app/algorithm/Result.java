@@ -10,6 +10,8 @@ public class Result {
 
     private String basis;
 
+    private String time;
+
     private ResultStatus resultStatus;
 
     private int parallelNumber;
@@ -60,5 +62,13 @@ public class Result {
 
     public void setParallelNumber(int parallelNumber) {
         this.parallelNumber = parallelNumber;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }

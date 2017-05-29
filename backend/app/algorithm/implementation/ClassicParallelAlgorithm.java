@@ -2,19 +2,19 @@ package algorithm.implementation;
 
 import algorithm.Algorithm;
 import algorithm.Result;
+import util.PrimeGenerator;
 
 import java.math.BigInteger;
-import java.util.*;
-import java.util.concurrent.Callable;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ForkJoinPool;
 
 import static algorithm.ResultStatus.*;
-import static tyrex.util.Configuration.console;
 import static util.BigIntegerOperations.log;
 import static util.BigIntegerOperations.pow;
-import static util.Logger.console;
 
 public class ClassicParallelAlgorithm implements Algorithm {
 
@@ -22,24 +22,17 @@ public class ClassicParallelAlgorithm implements Algorithm {
     private final static BigInteger ONE = BigInteger.ONE;
     private final static BigInteger ZERO = BigInteger.ZERO;
 
-    private final long[] PRIMES = new long[]{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47};
-
     @Override
-    public Result factorize(String number) {
-        final BigInteger factorizedNumber = new BigInteger(number);
-        console("Factorize " + factorizedNumber, "Factorized number bit size " + factorizedNumber.bitLength());
-        int i = 0;
-        long startTime = System.currentTimeMillis();
+    public Result factorize(final BigInteger factorizedNumber) {
+        long prime = 2;
         Result result;
         while (true) {
-            result = factorize(PRIMES[i++], factorizedNumber);
+            result = factorize(prime, factorizedNumber);
             if (result.getResultStatus() == SUCCESS) {
                 break;
             }
+            prime = PrimeGenerator.getNextPrime(prime);
         }
-        long endTime = System.currentTimeMillis();
-        long time = endTime - startTime;
-        console("Millis : " + time, "Second : " + time / 1000., "Minutes : " + time / 60_000.);
         return result;
     }
 

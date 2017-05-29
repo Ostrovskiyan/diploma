@@ -1,3 +1,24 @@
 .Container {
-    padding-top: 10%;
+    padding-top: 85px;
+
+    font-family: ProductSans;
+    text-align: center;
+    letter-spacing: 1px;
+    border: 0;
+}
+
+.Header {
+    width: 273px;
+    height: 58px;
+    font-family: ProductSans;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: left;
+    color: #000000;
+}
+
+.Underline {
+    width: 100px;
+    border: 2.5px solid #000;
+    margin-top: 15px;
 }

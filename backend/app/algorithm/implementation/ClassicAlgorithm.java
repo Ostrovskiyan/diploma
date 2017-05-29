@@ -2,13 +2,13 @@ package algorithm.implementation;
 
 import algorithm.Algorithm;
 import algorithm.Result;
+import util.PrimeGenerator;
 
 import java.math.BigInteger;
 
 import static algorithm.ResultStatus.*;
 import static util.BigIntegerOperations.log;
 import static util.BigIntegerOperations.pow;
-import static util.Logger.console;
 
 public class ClassicAlgorithm implements Algorithm {
 
@@ -16,24 +16,17 @@ public class ClassicAlgorithm implements Algorithm {
     private final static BigInteger ONE = BigInteger.ONE;
     private final static BigInteger ZERO = BigInteger.ZERO;
 
-    private final long[] PRIMES = new long[]{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47};
-
     @Override
-    public Result factorize(String number) {
-        final BigInteger factorizedNumber = new BigInteger(number);
-        console("Factorize " + factorizedNumber, "Factorized number bit size " + factorizedNumber.bitLength());
-        int i = 0;
-        long startTime = System.currentTimeMillis();
+    public Result factorize(BigInteger number) {
+        long prime = 2;
         Result result;
         while (true) {
-            result = factorize(PRIMES[i++], factorizedNumber);
-            if(result.getResultStatus() == SUCCESS) {
+            result = factorize(prime, number);
+            if (result.getResultStatus() == SUCCESS) {
                 break;
             }
+            prime = PrimeGenerator.getNextPrime(prime);
         }
-        long endTime = System.currentTimeMillis();
-        long time = endTime - startTime;
-        console("Millis : " + time, "Second : " + time / 1000., "Minutes : " + time / 60_000.);
         return result;
     }
 

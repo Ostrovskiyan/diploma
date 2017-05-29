@@ -1,0 +1,61 @@
+.Submit,.Submit:hover, .Submit:active, .Submit:focus {
+    width: 300px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: #8e68e8;
+    background-image: none;
+
+    font-size: 24px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    margin-top: 50px;
+}
+
+.Submit:hover, .Submit:focus, .Submit[disabled] {
+    background-color: #6b56d6 !important;
+}
+
+.Select {
+    width: 300px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: #f0f7fd;
+    border: 0;
+
+    font-size: 24px;
+    color: #000;
+    letter-spacing: 1px;
+
+    background-position: 95% center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.Select:focus, .Textarea:focus {
+    box-shadow: none;
+}
+
+.Textarea {
+    width: 300px;
+    resize: none;
+    border-radius: 5px;
+    background-color: #f0f7fd;
+    border: 0;
+    height: 180px !important;
+
+    font-size: 24px;
+    color: #000;
+    letter-spacing: 1px;
+}
+
+.Label {
+    font-family: ProductSans;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+    color: #b0bdc8;
+    display: block;
+    margin-top: 30px;
+}

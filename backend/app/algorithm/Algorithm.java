@@ -1,7 +1,9 @@
 package algorithm;
 
+import java.math.BigInteger;
+
 public interface Algorithm {
 
-    Result factorize(String number);
+    Result factorize(BigInteger number);
 
 }

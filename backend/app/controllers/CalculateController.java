@@ -1,5 +1,6 @@
 package controllers;
 
+import algorithm.AlgorithmType;
 import com.fasterxml.jackson.databind.JsonNode;
 import play.libs.Json;
 import play.mvc.Result;
@@ -18,7 +19,8 @@ public class CalculateController {
     public Result calculate() {
         JsonNode requestBody = request().body().asJson();
         String numberString = requestBody.get("number").asText();
-        return ok(Json.toJson(CalculateService.calculate(numberString)));
+        AlgorithmType t = AlgorithmType.CLASSIC;
+        return ok(Json.toJson(CalculateService.calculate(numberString, t)));
     }
 
 }
