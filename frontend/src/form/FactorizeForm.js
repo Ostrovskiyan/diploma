@@ -20,14 +20,14 @@ class FactorizeForm extends Component {
         return (
             <Form onSubmit={this.handleSubmit}>
                 <FormGroup controlId="numericalSystem">
-                    <ControlLabel className={styles.Label}>calculation type:</ControlLabel>
+                    <ControlLabel className={styles.Label}>calculation type</ControlLabel>
                     <FormControl componentClass="select" className={styles.Select}>
                         <option value="select">Classic</option>
                         <option value="select">Parallel classic</option>
                     </FormControl>
                 </FormGroup>
                 <FormGroup controlId="numericalSystem">
-                    <ControlLabel className={styles.Label}>numeral system:</ControlLabel>
+                    <ControlLabel className={styles.Label}>numeral system</ControlLabel>
                     <FormControl componentClass="select" className={styles.Select}>
                         <option value="select">2</option>
                         <option value="select">8</option>
@@ -40,7 +40,7 @@ class FactorizeForm extends Component {
                     <textarea className={`form-control ${styles.Textarea}`}
                               placeholder="Number" ref={(input) => {
                         this.numberInput = input
-                    }} defaultValue="4583684"/>
+                    }} defaultValue="9173503"/>
                 </FormGroup>
                 <Button type="submit" disabled={this.props.loading} className={styles.Submit}>
                     factorize

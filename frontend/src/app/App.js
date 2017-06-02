@@ -11,7 +11,7 @@ export default class App extends Component {
             <div className={`container ${styles.Container}`}>
                 <Row>
                     <Col xs={3} xsOffset={1}>
-                        <div className={styles.Header}>Factorising</div>
+                        <div className={styles.Header}>factorising</div>
                         <div className={styles.Underline}/>
                     </Col>
                 </Row>

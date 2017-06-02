@@ -24,7 +24,7 @@ class ResultPanel extends Component {
         return (
             <div>
                 <div className={styles.ResultHeader}>
-                    Result
+                    result
                 </div>
                 <div className={styles.ResultPanel}>
                     <table>
